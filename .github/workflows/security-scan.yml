@@ -39,7 +39,7 @@ jobs:
       with:
         sarif_file: reports
 
-sonarcloud:
+  sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
