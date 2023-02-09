@@ -12,15 +12,15 @@ jobs:
       with:
         fetch-depth: 2
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@3ebbd71c74ef574dbc558c82f70e52732c8b44fe # v2.2.1
+      uses: github/codeql-action/init@8775e868027fa230df8586bdf502bbd9b618a477 # v2.2.3
       continue-on-error: true
       id: initcodeql
     - name: Autobuild
       if: steps.initcodeql.outcome == 'success'
-      uses: github/codeql-action/autobuild@3ebbd71c74ef574dbc558c82f70e52732c8b44fe # v2.2.1
+      uses: github/codeql-action/autobuild@8775e868027fa230df8586bdf502bbd9b618a477 # v2.2.3
     - name: Perform CodeQL Analysis
       if: steps.initcodeql.outcome == 'success'
-      uses: github/codeql-action/analyze@3ebbd71c74ef574dbc558c82f70e52732c8b44fe # v2.2.1
+      uses: github/codeql-action/analyze@8775e868027fa230df8586bdf502bbd9b618a477 # v2.2.3
 
   ShiftLeft:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
       with:
         output: reports
     - name: Upload report
-      uses: github/codeql-action/upload-sarif@3ebbd71c74ef574dbc558c82f70e52732c8b44fe # v2.2.1
+      uses: github/codeql-action/upload-sarif@8775e868027fa230df8586bdf502bbd9b618a477 # v2.2.3
       with:
         sarif_file: reports
 
