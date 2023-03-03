@@ -1,7 +1,7 @@
 name: "Security Scanning"
 on:
   workflow_call:
-
+permissions: read-all
 jobs:
   CodeQL:
     name: CodeQL
