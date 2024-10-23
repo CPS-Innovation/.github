@@ -5,7 +5,7 @@ jobs:
   ShiftLeft:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     - name: Perform ShiftLeft Scan
       uses: ShiftLeftSecurity/scan-action@master
       env:
@@ -22,7 +22,7 @@ jobs:
   Checkov:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+    - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
     - name: Perform Checkov Scan
       uses: bridgecrewio/checkov-action@v12
       with:
