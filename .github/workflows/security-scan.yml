@@ -1,6 +1,12 @@
 name: "Security Scanning"
 on:
   workflow_call:
+    inputs:
+      upload_report:
+        description: "Whether to upload the SARIF security report to GitHub code scanning."
+        type: boolean
+        required: false
+        default: true
 jobs:
   ShiftLeft:
     runs-on: ubuntu-latest
@@ -19,6 +25,7 @@ jobs:
       with:
         output: reports
     - name: Upload report
+      if: inputs.upload_report
       uses: github/codeql-action/upload-sarif@v3
       with:
         sarif_file: reports
@@ -40,6 +47,7 @@ jobs:
 
     - name: Upload Report
       uses: github/codeql-action/upload-sarif@v3
-      if: success() || failure()
+      if: inputs.upload_report && (success() || failure())
       with:
         sarif_file: results.sarif
+ 
