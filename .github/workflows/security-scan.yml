@@ -39,7 +39,7 @@ jobs:
     steps:
     - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
     - name: Perform Checkov Scan
-      uses: bridgecrewio/checkov-action@9b70310bcd306d11740313070b940167d6b23085 # master
+      uses: bridgecrewio/checkov-action@b17b606d6ec72bb8ba5721ad5b7e340b80a9fc39 # master
       with:
         output_format: cli,sarif
         output_file_path: console,results.sarif
